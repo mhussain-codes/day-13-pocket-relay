@@ -25,6 +25,8 @@ Open `http://localhost:3000`. The app stores encrypted room data in `data/`; kee
 
 This app needs a Node.js host and persistent storage; GitHub Pages alone cannot save messages between devices. On a Node.js hosting plan, connect this repository, select Node.js 20+, and set the start command to `npm start` (or entry file `server.js`). Make sure the application can write its data directory and that HTTPS is enabled before sharing links.
 
+The live app is available at [pocket-relay-steel.vercel.app](https://pocket-relay-steel.vercel.app/). Vercel provides the shorter public address and forwards requests to the Hostinger Node.js server; Hostinger keeps the persistent encrypted chat storage. The Vercel rewrite target is configured in `vercel.json`, so update it if the Hostinger app address ever changes.
+
 On Hostinger, use hPanel's Node.js application deployment for your domain or subdomain. Keep the encrypted `data/` directory persistent across app restarts and deployments. The app listens on the `PORT` environment variable supplied by the host.
 
 ## Privacy and limits
