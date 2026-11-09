@@ -1,9 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "public",
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "https://royalblue-kingfisher-249441.hostingersite.com/$1"
+      "source": "/api/(.*)",
+      "destination": "https://royalblue-kingfisher-249441.hostingersite.com/api/$1"
+    },
+    {
+      "source": "/c/(.*)",
+      "destination": "/index.html"
     }
   ],
   "framework": null
