@@ -108,6 +108,12 @@ const server = http.createServer(async (req, res) => {
   const secure = req.socket.encrypted || req.headers['x-forwarded-proto'] === 'https';
   securityHeaders(res, secure);
 
+  if (url.pathname === '/googlece720df366844541.html') {
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+    if (req.method === 'HEAD') return res.end();
+    return res.end('google-site-verification: googlece720df366844541.html');
+  }
+
   if (url.pathname.startsWith('/api/')) {
     if (req.method === 'GET' && url.pathname === '/api/health') return json(res, 200, { ok: true });
     if (req.method === 'POST' && url.pathname === '/api/rooms') {
